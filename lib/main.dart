@@ -24,11 +24,13 @@ class _MyPageState extends State<MyPage> {
              Text(message),
              ElevatedButton(
                onPressed: () {
-                 setState(() {
-                   message = 'กดปุ่มแล้ว!';
-                 });
+                 Navigator.of(context).push(
+                   MaterialPageRoute<void>(
+                     builder: (context) => const ProfilePage(),
+                   ),
+                 );
                },
-               child: const Text('กดฉันสิไอดำ555'),
+               child: const Text('Press'),
              ),
            ],
          ),
@@ -36,3 +38,29 @@ class _MyPageState extends State<MyPage> {
      );
    }
  }
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Profile')),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(Icons.person, size: 72),
+            const SizedBox(height: 12),
+            const Text('Profile'),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('ย้อนกลับ'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
