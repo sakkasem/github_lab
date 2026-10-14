@@ -7,12 +7,12 @@ This file records the project's changes and the steps used to check each feature
 - Added this file to preserve the project history and test instructions for completed and ongoing work.
 - Check: compare the listed commits with `git log --oneline`; use the manual test steps in each feature entry to exercise that feature. No app or automated tests were run for this documentation change.
 
-## 2026-10-14 — Light and dark mode (in progress; not committed)
+## 2026-10-14 — Light and dark mode
 
 - Added a Light/Dark mode switch on the home page. The selected theme applies across the home and Profile pages.
 - Persisted the setting locally with `shared_preferences` so it is restored on app launch.
 - Added the dependency and refreshed the lockfile and macOS generated plugin registration.
-- Checks run: `flutter pub get` completed successfully; `dart format lib/main.dart` completed successfully. No app or automated tests were run.
+- Checks run: `flutter pub get` completed successfully; `dart format lib/main.dart` completed successfully. The app and automated tests were not run, so the manual steps below remain to be performed.
 - Manual test: run `flutter run`; switch Dark mode on and confirm the screen updates; open Profile and confirm it uses dark mode; restart the app and confirm dark mode remains selected. Turn it off, restart, and confirm Light mode remains selected.
 
 ## 2026-10-14 — Profile page navigation (commit `819b8e0`)
